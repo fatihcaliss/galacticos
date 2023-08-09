@@ -1,7 +1,6 @@
 import React from "react";
 
 const MatchItem = ({ matchInfo, setMatchID }) => {
-  console.log("first", setMatchID);
   return (
     <button
       type="button"

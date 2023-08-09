@@ -18,7 +18,6 @@ export default function Home() {
       })
   )
   const [matchID, setMatchID] = useState(null)
-  console.log('home', matchID)
   return (
     <QueryClientProvider client={queryClient}>
     <div className="h-screen">
