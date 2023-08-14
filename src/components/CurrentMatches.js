@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import MatchItem from "./matchItem";
+import MatchItem from "./MatchItem";
 
 const CurrentMatches = ({setMatchID}) => {
   const fetchMatchList = async () => {
@@ -26,7 +26,7 @@ const CurrentMatches = ({setMatchID}) => {
     queryKey: ["currentMatches"],
     queryFn: fetchMatchList,
   });
-  const currentMatchListData  = data?.liveMatches?.CLQ || []
+  const currentMatchListData  = data?.liveMatches?.TR1 || []
 
   if (isLoading) {
     return <span>Loading...</span>;

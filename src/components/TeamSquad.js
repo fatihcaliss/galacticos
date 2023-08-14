@@ -35,8 +35,7 @@ const TeamSquad = ({ matchID }) => {
   if (isError) {
     return <span>Error: {error.message}</span>;
   }
-console.log('isLoading', isLoading)
-console.log('status', status)
+
   return (
     <div className="w-100 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
       <button
@@ -47,7 +46,7 @@ console.log('status', status)
         Home Team
       </button>
       {!isFetching ? (
-        isSuccess && Object.keys(teamsSquadsData?.home?.start).length ? (
+        isSuccess && typeof teamsSquadsData?.home === 'object' && Object.keys(teamsSquadsData?.home?.start).length ? (
           Object.values(teamsSquadsData?.home?.start).map((item) => {
             return <SquadItem player={item} />;
           })
@@ -66,7 +65,7 @@ console.log('status', status)
         Away Team
       </button>
       {!isFetching  ? (
-        isSuccess && Object.keys(teamsSquadsData?.away?.start).length ? (
+        isSuccess && typeof teamsSquadsData?.away === 'object'  && Object.keys(teamsSquadsData?.away?.start).length ? (
           Object.values(teamsSquadsData?.away?.start).map((item) => {
             return <SquadItem player={item} />;
           })
